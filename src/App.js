@@ -1,23 +1,64 @@
-import logo from './logo.svg';
 import './App.css';
+import Festival from './components/Festival';
+import Footer from './components/Footer';
+import Header from './components/Header';
+import Nav from './components/Nav';
+import Welcome from './components/Welcome';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import FirstSlide from './components/FirstSlide';
+import ShopingShop from './components/ShopingShop';
+import Wooden from './components/Wooden';
+import Terminal from './components/Terminal';
+import Latest from './components/Latest';
+import { useEffect, useState } from 'react';
+import Preload from './components/Preload';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import BackToTop from './components/BackToTop';
+import { Route, Routes } from 'react-router-dom';
+import Home from './Pages/Home';
+import About from './Pages/About';
+import Shop from './Pages/Shop';
 
 function App() {
+  const [PreLoader, setPreLoader] = useState(false)
+  useEffect(() => {
+    setPreLoader(true);
+    setTimeout(() => {
+      setPreLoader(false);
+    }, 3000)
+  }, [])
+  useEffect(() => {
+    AOS.init({
+      duration: 3000,
+      once: true,
+    });
+  }, [])
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      { PreLoader?( <div> <Preload /> </div> ) :
+        (<div>
+      {/* <div className='bg-[url(./assets/image/sec1-bg.webp)] h-screen bg-normal bg-center md:bg-100% flex flex-col bg-no-repeat'>
+        <Nav />
+        <Header />
+      </div>
+      <Welcome />
+      <FirstSlide />
+      <ShopingShop />
+      <Wooden />
+      <Latest />
+      <Festival />
+      <Terminal />
+      <Footer />
+      <BackToTop /> */}
+      <Routes>
+        <Route path='/' element={<Home/>} />
+        <Route path='/about' element={<About />} />
+        <Route path='/cart' element={<Shop />} />
+      </Routes>
+        </div>)
+      }
     </div>
   );
 }

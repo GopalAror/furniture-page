@@ -11,7 +11,7 @@ const ShopCards = (props) => {
                 </div>
                 <p className='text-[#4D4D4D] font-poppins text-[20px] font-medium pt-[16px]'>{props.lorem}</p>
                 <div className="flex justify-between pt-[16px] items-center">
-                <p className='text-black font-poppins font-semibold text-[28px] leading-[normal]'>{props.money}</p>
+                <p className='text-black font-poppins font-semibold text-[18px] sm:text-[28px] leading-[normal]'>{props.money}</p>
                 <Cartbtn second={props.btn} />
                 </div>
             </div>

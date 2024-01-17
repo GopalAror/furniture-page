@@ -2,13 +2,13 @@ import React, { useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import custmer1 from "../assets/image/terminalimg1.png";
-import custmer2 from "../assets/image/terminalimg2.png";
-import custmer3 from "../assets/image/terminalimg3.png";
-import custmer4 from "../assets/image/terminalimg4.png";
-import custmer5 from "../assets/image/terminalimg5.png";
-import custmer6 from "../assets/image/terminalimg6.png";
-import custmer7 from "../assets/image/terminalimg7.png";
+import custmer1 from "../assets/image/terminalimg1.webp";
+import custmer2 from "../assets/image/terminalimg2.webp";
+import custmer3 from "../assets/image/terminalimg3.webp";
+import custmer4 from "../assets/image/terminalimg4.webp";
+import custmer5 from "../assets/image/terminalimg5.webp";
+import custmer6 from "../assets/image/terminalimg6.webp";
+import custmer7 from "../assets/image/terminalimg7.webp";
 const Terminal = () => {
   var settings = {
     centerMode: true,

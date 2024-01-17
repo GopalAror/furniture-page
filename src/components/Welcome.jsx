@@ -12,9 +12,9 @@ const Welcome = () => {
     }
     return (
         <div>
-            <div className="mx-auto pt-[70px] max-w-[1320px] px-3 overflow-hidden">
+            <div className="mx-auto pt-[70px] max-w-[1320px] px-3">
                 <div className="flex flex-wrap pb-[120px] justify-center items-center -mx-3 flex-row">
-                    <div className="w-full sm:w-8/12 lg:w-5/12 min-h-[500px] min-[400px]:min-h-[562px] px-3" data-aos="fade-right">
+                    <div className="w-full sm:w-8/12 lg:w-5/12 min-h-[500px] min-[400px]:min-h-[562px] px-3">
                         <div className="max-w-[416px] relative w-full min-h-[336px] bg-gradient-to-l from-neutral-400 via-slate-600 to-slate-950">
                             <img className='shadow-[3px_8px_26px_0px_rgba(0,0,0,0.12)] max-w-[456px] w-full absolute top-[15%] min-[500px]:left-[12%] left-0 min-h-[400px] min-[500px]:min-h-[498px]' src={img1} alt="second-sec-img1" />
                             <div className="cursor-pointer min-[500px]:right-[-12%] right-0 absolute bottom-[-35%] min-[500px]:bottom-[-63%] px-[15px] py-[16px] bg-white flex items-center" onClick={() => setshowmodal(true)}>
@@ -39,7 +39,7 @@ const Welcome = () => {
                             </>
                         ) : null}
                     </div>
-                    <div className="w-full sm:w-8/12 lg:w-7/12 px-3 items-center flex flex-col h-full justify-center" data-aos="fade-left">
+                    <div className="w-full sm:w-8/12 lg:w-7/12 px-3 items-center flex flex-col h-full justify-center">
                         <div className='lg:pl-[100px]'>
                             <div className='flex items-center gap-2'>
                                 <div className="h-[1px] w-[95px] bg-black"></div>

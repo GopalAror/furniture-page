@@ -57,7 +57,7 @@ const FirstSlide = () => {
                 </div>
                 <div className="flex gap-[6.83px] items-center">
                     <div className="flex gap-[2.87px] items-center">
-                        <p className="font-poppins text-[28.68px] leading-normal teext-center font-semibold">
+                        <p className="font-poppins text-[18px] sm:text-[28.68px] leading-normal teext-center font-semibold">
                            {images.money}
                         </p>
                     </div>

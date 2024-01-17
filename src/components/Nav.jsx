@@ -4,8 +4,12 @@ import { Link } from 'react-router-dom';
 
 const Nav = () => {
     const [first, setfirst] = useState(false)
+    const [data, setdata] = useState(false)
     function show() {
         setfirst(!first)
+    }
+    function hide() {
+        setdata(!data)
     }
     return (
         <div>
@@ -16,7 +20,7 @@ const Nav = () => {
                             <img src={logo} alt="logo" />
                             <h3 className='text-white font-roboto text-[25px] sm:text-[33.023px] font-bold leading-[normal]'>FURNITURE</h3>
                         </div>
-                        <div className="  min-[500px]:flex hidden gap-[28px] max-lg:justify-center lg:hidden mr-[120px]">
+                        <div className="min-[500px]:flex hidden gap-[28px] max-lg:justify-center lg:hidden mr-[120px]">
                             <span>
                                 <svg className=' group duration-500 cursor-pointer' xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19" fill="none">
                                     <path d="M8 16C9.77498 15.9996 11.4988 15.4054 12.897 14.312L17.293 18.708L18.707 17.294L14.311 12.898C15.405 11.4997 15.9996 9.77544 16 8C16 3.589 12.411 0 8 0C3.589 0 0 3.589 0 8C0 12.411 3.589 16 8 16ZM8 2C11.309 2 14 4.691 14 8C14 11.309 11.309 14 8 14C4.691 14 2 11.309 2 8C2 4.691 4.691 2 8 2Z" fill="white" className='group-hover:fill-[#BD7D41]' />
@@ -38,18 +42,23 @@ const Nav = () => {
                                 <span className='bg-[#BD7D41] w-[45px] h-[5px] rounded-lg mt-[10px]'></span>
                                 <span className='bg-[#BD7D41] w-[45px] h-[5px] rounded-lg mt-[10px]'></span>
                             </label>)}
-                        <div className={`flex gap-[40px] max-lg:flex-col max-lg:bg-[#293544] max-lg:h-full max-lg:w-full max-lg:justify-center max-lg:fixed max-lg:top-0 duration-700 ${first ? 'left-0' : 'left-[-100%]'}`}>
+                        <div className={`flex gap-[40px] max-lg:flex-col max-lg:bg-[#293544] max-lg:h-full max-lg:w-full max-lg:justify-center max-lg:fixed max-lg:top-0 z-[90] duration-700 ${first ? 'left-0' : 'left-[-100%]'}`}>
                             <div className="flex gap-[55px] items-center max-lg:flex-col">
-                                <Link to="/" className='font-Roboto font-normal text-[#fff] text-[18px] leading-normal relative before:absolute before:bg-[#BD7D41] webkit before:h-[3px] before:bottom-[-7px] before:left-0 before:w-full before:transition-all duration-300'>HOME</Link>
-                                <Link to="/about" className='font-Roboto font-normal text-[#fff] text-[18px] leading-normal relative before:absolute before:bg-[#BD7D41] before:w-0 before:h-[3px] before:bottom-[-7px] before:left-0 before:hover:w-full before:transition-all duration-300'>ABOUT US</Link>
-                                <Link to="/cart" className='font-Roboto font-normal text-[#fff] text-[18px] leading-normal relative before:absolute before:bg-[#BD7D41] before:w-0 before:h-[3px] before:bottom-[-7px] before:left-0 before:hover:w-full before:transition-all duration-300'>SHOP</Link>
-                                <Link className='font-Roboto font-normal text-[#fff] text-[18px] leading-normal relative before:absolute before:bg-[#BD7D41] before:w-0 before:h-[3px] before:bottom-[-7px] before:left-0 before:hover:w-full before:transition-all duration-300'>CONTACT US</Link>
+                                <Link to="/" className='font-Roboto font-normal text-[#fff] text-[18px] leading-normal relative before:absolute before:bg-[#BD7D41] webkit before:h-[3px] before:bottom-[-7px] before:left-0 before:w-full before:transition-all duration-300' onClick={show}>HOME</Link>
+                                <Link to="/about" className='font-Roboto font-normal text-[#fff] text-[18px] leading-normal relative before:absolute before:bg-[#BD7D41] before:w-0 before:h-[3px] before:bottom-[-7px] before:left-0 before:hover:w-full before:transition-all duration-300' onClick={show}>ABOUT US</Link>
+                                <Link to="/cart" className='font-Roboto font-normal text-[#fff] text-[18px] leading-normal relative before:absolute before:bg-[#BD7D41] before:w-0 before:h-[3px] before:bottom-[-7px] before:left-0 before:hover:w-full before:transition-all duration-300' onClick={show}>SHOP</Link>
+                                <Link className='font-Roboto font-normal text-[#fff] text-[18px] leading-normal relative before:absolute before:bg-[#BD7D41] before:w-0 before:h-[3px] before:bottom-[-7px] before:left-0 before:hover:w-full before:transition-all duration-300' onClick={show}>CONTACT US</Link>
                             </div>
-                            <div className=" min-[500px]:hidden flex gap-[28px] max-lg:justify-center items-center lg:flex">
+                            <div className=" flex gap-[28px] max-lg:justify-center items-center lg:flex">
                                 <span>
+                                    {/* {data ? (<div className='flex item-center border-2 border-[#BD7D41] '> <input className=' bg-transparent border border-white text-white' type="search" data-aos="fade-right" data-aos-duration="500" /></div>) : (<div onClick={hide}>
+                                        <svg className=' group duration-500 cursor-pointer' xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19" fill="none">
+                                            <path d="M8 16C9.77498 15.9996 11.4988 15.4054 12.897 14.312L17.293 18.708L18.707 17.294L14.311 12.898C15.405 11.4997 15.9996 9.77544 16 8C16 3.589 12.411 0 8 0C3.589 0 0 3.589 0 8C0 12.411 3.589 16 8 16ZM8 2C11.309 2 14 4.691 14 8C14 11.309 11.309 14 8 14C4.691 14 2 11.309 2 8C2 4.691 4.691 2 8 2Z" fill="white" className='group-hover:fill-[#BD7D41]' />
+                                        </svg>
+                                    </div>)} */}
                                     <svg className=' group duration-500 cursor-pointer' xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19" fill="none">
-                                        <path d="M8 16C9.77498 15.9996 11.4988 15.4054 12.897 14.312L17.293 18.708L18.707 17.294L14.311 12.898C15.405 11.4997 15.9996 9.77544 16 8C16 3.589 12.411 0 8 0C3.589 0 0 3.589 0 8C0 12.411 3.589 16 8 16ZM8 2C11.309 2 14 4.691 14 8C14 11.309 11.309 14 8 14C4.691 14 2 11.309 2 8C2 4.691 4.691 2 8 2Z" fill="white" className='group-hover:fill-[#BD7D41]' />
-                                    </svg>
+                                            <path d="M8 16C9.77498 15.9996 11.4988 15.4054 12.897 14.312L17.293 18.708L18.707 17.294L14.311 12.898C15.405 11.4997 15.9996 9.77544 16 8C16 3.589 12.411 0 8 0C3.589 0 0 3.589 0 8C0 12.411 3.589 16 8 16ZM8 2C11.309 2 14 4.691 14 8C14 11.309 11.309 14 8 14C4.691 14 2 11.309 2 8C2 4.691 4.691 2 8 2Z" fill="white" className='group-hover:fill-[#BD7D41]' />
+                                        </svg>
                                 </span>
                                 <span>
                                     <svg className='group duration-500 fill-[#BD7D41] cursor-pointer' xmlns="http://www.w3.org/2000/svg" width="26" height="23" viewBox="0 0 26 23" fill="none">

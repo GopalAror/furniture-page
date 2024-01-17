@@ -3,66 +3,17 @@ import React from 'react'
 const Preload = () => {
     return (
         <div className='bg-[#243040] h-full w-full fixed top-0 bottom-0 left-0 overflow-hidden'>
-            <svg className=' fixed top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] h-[150px] w-[150px]' viewBox="0 0 100 100">
-                <g fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="6">
-                    <path d="M 21 40 V 59">
-                        <animateTransform
-                            attributeName="transform"
-                            attributeType="XML"
-                            type="rotate"
-                            values="0 21 59; 180 21 59"
-                            dur="2s"
-                            repeatCount="indefinite" />
-                    </path>
-	transform: translate(-50%, -50%);
-                    <path d="M 79 40 V 59">
-                        <animateTransform
-                            attributeName="transform"
-                            attributeType="XML"
-                            type="rotate"
-                            values="0 79 59; -180 79 59"
-                            dur="2s"
-                            repeatCount="indefinite" />
-                    </path>
-                    <path d="M 50 21 V 40">
-                        <animate
-                            attributeName="d"
-                            values="M 50 21 V 40; M 50 59 V 40"
-                            dur="2s"
-                            repeatCount="indefinite" />
-                    </path>
-                    <path d="M 50 60 V 79">
-                        <animate
-                            attributeName="d"
-                            values="M 50 60 V 79; M 50 98 V 79"
-                            dur="2s"
-                            repeatCount="indefinite" />
-                    </path>
-                    <path d="M 50 21 L 79 40 L 50 60 L 21 40 Z">
-                        <animate
-                            attributeName="stroke"
-                            values="rgba(255,255,255,1); rgba(100,100,100,0)"
-                            dur="2s"
-                            repeatCount="indefinite" />
-                    </path>
-                    <path d="M 50 40 L 79 59 L 50 79 L 21 59 Z" />
+            <div className="flex items-center justify-center w-full h-full">
+                <div className="flex justify-center items-center space-x-1 text-sm text-gray-700">
 
-                    <path d="M 50 59 L 79 78 L 50 98 L 21 78 Z">
-                        <animate
-                            attributeName="stroke"
-                            values="rgba(100,100,100,0); rgba(255,255,255,1)"
-                            dur="2s"
-                            repeatCount="indefinite" />
-                    </path>
-                    <animateTransform
-                        attributeName="transform"
-                        attributeType="XML"
-                        type="translate"
-                        values="0 0; 0 -19"
-                        dur="2s"
-                        repeatCount="indefinite" />
-                </g>
-            </svg>
+                    <svg fill='none' className="w-[50px] h-[50px] animate-spin" viewBox="0 0 32 32" xmlns='http://www.w3.org/2000/svg'>
+                        <path clipRule='evenodd'
+                            d='M15.165 8.53a.5.5 0 01-.404.58A7 7 0 1023 16a.5.5 0 011 0 8 8 0 11-9.416-7.874.5.5 0 01.58.404z'
+                            fill='white' fillRule='evenodd' />
+                    </svg>
+                    <div className=' font-roboto text-[50px] text-white font-semibold'>Loading ...</div>
+                </div>
+            </div>
         </div>
     )
 }

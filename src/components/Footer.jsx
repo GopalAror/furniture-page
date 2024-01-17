@@ -4,7 +4,7 @@ import insta from "../assets/image/insta.svg";
 import facebbok from "../assets/image/fb.svg";
 import twitter from "../assets/image/twitter.svg";
 const Footer = () => {
-    const y =new Date();
+    const y = new Date();
     const year = y.getFullYear();
     return (
         <div className="bg-[#243040] pt-[80px]">

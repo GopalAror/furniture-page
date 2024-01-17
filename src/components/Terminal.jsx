@@ -38,7 +38,7 @@ const Terminal = () => {
   const [nav2, setNav2] = useState();
   return (
     <div className=" overflow-x-clip">
-      <div className="max-w-[1341px] px-3 mx-auto pb-[100px]">
+      <div className="max-w-[1341px] relative z-0 px-3 mx-auto pb-[100px]">
         <span className="flex items-center gap-2">
           <hr className="max-w-[96px] w-full h-[1px] bg-[#000000] border-t-[unset]" />
           <p className="text-[#BD7D41] font-poppines text-lg sm:text-xl text-center font-normal leading-normal">

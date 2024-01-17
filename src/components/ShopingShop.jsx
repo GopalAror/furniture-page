@@ -115,7 +115,7 @@ const ShopingShop = () => {
     return (
         <div className=' overflow-x-clip'>
             <div className="max-w-[1320px] px-3 mx-auto py-[60px] lg:py-[120px]">
-                <div className=" flex pb-[70px] justify-between items-center">
+                <div className=" flex pb-[70px] justify-between items-center flex-wrap">
                     <div>
                         <div className="flex items-center gap-[9px]">
                             <div className="w-[16%] border border-black border-solid "></div>

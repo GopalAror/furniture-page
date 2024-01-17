@@ -123,7 +123,7 @@ const ShopingShop = () => {
                                 Shopping Store
                             </p>
                         </div>
-                        <h3 className=' pt-[19px] text-[35px] text-[#243040] font-poppins font-bold leading-[normal]'>Our Products</h3>
+                        <h3 className=' pt-[19px] sm:text-[30px] text-[23px] md:text-[35px] text-[#243040] font-poppins font-bold leading-[normal]'>Our Products</h3>
                     </div>
                     <div onClick={view}>
                         <Firstbtn first='VIEW ALL PRODUCT' />

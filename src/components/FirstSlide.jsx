@@ -146,7 +146,7 @@ const FirstSlide = () => {
                                 Shopping Store
                             </p>
                         </div>
-                        <h2 className=" pt-[29px] text-[35px] text-[#243040] font-poppins font-bold leading-[normal] max-w-[436px]">
+                        <h2 className=" pt-[29px] sm:text-[30px] text-[23px] md:text-[35px] text-[#243040] font-poppins font-bold leading-[normal] max-w-[436px]">
                             Buy trending furniture Products.
                         </h2>
                         <p className=" pt-[19px] text-lg font-poppins leading-normal font-normal text-[#000000B2] max-w-[422px]">

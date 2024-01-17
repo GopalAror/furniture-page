@@ -37,26 +37,13 @@ function App() {
   }, [])
   return (
     <div>
-      { PreLoader?( <div> <Preload /> </div> ) :
+      {PreLoader ? (<div> <Preload /> </div>) :
         (<div>
-      {/* <div className='bg-[url(./assets/image/sec1-bg.webp)] h-screen bg-normal bg-center md:bg-100% flex flex-col bg-no-repeat'>
-        <Nav />
-        <Header />
-      </div>
-      <Welcome />
-      <FirstSlide />
-      <ShopingShop />
-      <Wooden />
-      <Latest />
-      <Festival />
-      <Terminal />
-      <Footer />
-      <BackToTop /> */}
-      <Routes>
-        <Route path='/' element={<Home/>} />
-        <Route path='/about' element={<About />} />
-        <Route path='/cart' element={<Shop />} />
-      </Routes>
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/about' element={<About />} />
+            <Route path='/cart' element={<Shop />} />
+          </Routes>
         </div>)
       }
     </div>

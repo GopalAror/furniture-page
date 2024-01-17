@@ -14,7 +14,7 @@ const Wooden = () => {
                                 Shopping Store
                             </p>
                         </div>
-                        <h3 className='pt-[24px] text-[35px] pb-[50px] text-[#243040] font-poppins font-bold leading-[normal] max-w-[436px]'>Wooden Sofa Starts From ₹ 1200.00</h3>
+                        <h3 className='pt-[24px] sm:text-[30px] text-[23px] md:text-[35px] pb-[50px] text-[#243040] font-poppins font-bold leading-[normal] max-w-[436px]'>Wooden Sofa Starts From ₹ 1200.00</h3>
                         <Firstbtn first="SHOP NOW" />
                     </div>
                     <div className=" w-full lg:w-7/12 pt-[60px] px-3 relative z-10"  data-aos="fade-right">

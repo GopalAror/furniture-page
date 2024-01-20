@@ -36,8 +36,8 @@ const Welcome = () => {
                                         </div>
                                     </div>
                                 </div>
-                            </>
-                        ) : null}
+                            </>  
+                        ) : null}   
                     </div>
                     <div className="w-full sm:w-8/12 lg:w-7/12 px-3 items-center flex flex-col h-full justify-center">
                         <div className='lg:pl-[100px]'>

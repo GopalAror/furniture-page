@@ -11,6 +11,23 @@ import ShopCards from './ShopCards';
 
 const ShopingShop = () => {
     const [data, setdata] = useState(6)
+    const [save, setsave] = useState(false)
+    const [second, setsecond] = useState([])
+    function addToCart(p) {
+        setsave(true)
+        setsecond([...second, p])
+        document.body.classList.add("overflow-hidden")
+
+    }
+    function remove(index) {
+        const leftcart = [...second];
+        leftcart.splice(index, 1);
+        setsecond(leftcart);
+        if (leftcart.length === 0) {
+            setsave(false);
+            document.body.classList.remove("overflow-hidden")
+        }
+    }
     function view() {
         setdata(!data)
         if (data === 6) {
@@ -19,6 +36,10 @@ const ShopingShop = () => {
         else {
             setdata(6)
         }
+    }
+    function back() {
+        setsave(false)
+        document.body.classList.remove("overflow-hidden")
     }
     const cards = [
         {
@@ -29,7 +50,8 @@ const ShopingShop = () => {
             text: 'Lorem ipsum dolor',
             money: '₹ 1200.00',
             cart: 'ADD TO CART',
-            data:"fade-down-right"
+            data: "fade-down-right",
+            back: addToCart,
         },
         {
             id: 2,
@@ -39,7 +61,8 @@ const ShopingShop = () => {
             text: 'Lorem ipsum dolor',
             money: '₹ 1200.00',
             cart: 'ADD TO CART',
-            data:"fade-down"
+            data: "fade-down",
+            back: addToCart,
         },
         {
             id: 3,
@@ -49,7 +72,8 @@ const ShopingShop = () => {
             text: 'Lorem ipsum dolor',
             money: '₹ 1200.00',
             cart: 'ADD TO CART',
-            data:"fade-down-left",
+            data: "fade-down-left",
+            back: addToCart,
         },
         {
             id: 4,
@@ -59,7 +83,8 @@ const ShopingShop = () => {
             text: 'Lorem ipsum dolor',
             money: '₹ 1200.00',
             cart: 'ADD TO CART',
-            data:"fade-down-right",
+            data: "fade-down-right",
+            back: addToCart,
         },
         {
             id: 5,
@@ -69,7 +94,8 @@ const ShopingShop = () => {
             text: 'Lorem ipsum dolor',
             money: '₹ 1200.00',
             cart: 'ADD TO CART',
-            data:"fade-down"
+            data: "fade-down",
+            back: addToCart,
         },
         {
             id: 6,
@@ -79,7 +105,8 @@ const ShopingShop = () => {
             text: 'Lorem ipsum dolor',
             money: '₹ 1200.00',
             cart: 'ADD TO CART',
-            data:"fade-down-left"
+            data: "fade-down-left",
+            back: addToCart,
         },
         {
             id: 7,
@@ -89,7 +116,8 @@ const ShopingShop = () => {
             text: 'Lorem ipsum dolor',
             money: '₹ 1200.00',
             cart: 'ADD TO CART',
-            data:"fade-down-right",
+            back: addToCart,
+            data: "fade-down-right",
         },
         {
             id: 8,
@@ -99,7 +127,8 @@ const ShopingShop = () => {
             text: 'Lorem ipsum dolor',
             money: '₹ 1200.00',
             cart: 'ADD TO CART',
-            data:"fade-down"
+            data: "fade-down",
+            back: addToCart,
         },
         {
             id: 9,
@@ -109,11 +138,42 @@ const ShopingShop = () => {
             text: 'Lorem ipsum dolor',
             money: '₹ 1200.00',
             cart: 'ADD TO CART',
-            data:"fade-down-left"
+            data: "fade-down-left",
+            back: addToCart,
         },
+
     ]
+    const cart = second.map((p, index) => (
+        <div key={index} className=' bg-slate-400'>
+            <div className='bg-white'>
+                <img src={p.sofa} alt="sofa" />
+                <div className='flex justify-between pt-3'>
+                    <p>{p.item}</p>
+                    <img src={p.star} alt="star" />
+                </div>
+                <div className='flex justify-between items-center py-5'>
+                    <p>{p.money}</p>
+                    <button className='bg-[#BD7D41] text-white rounded-full px-5 py-2 ' onClick={() => remove(index)}>Remove</button>
+                </div>
+            </div>
+        </div>
+    ))
+    function empty(p) {
+        setsecond([])
+        setsave(false);
+        document.body.classList.remove("overflow-hidden")
+    }
     return (
         <div className=' overflow-x-clip'>
+            <div className={` fixed  top-0  bg-[#000000a3]  w-full h-full z-30 ${save ? "right-0" : "right-[-100%]"} `}>
+                <div className="   overflow-y-scroll bg-white md:w-6/12  lg:w-1/3 h-full p-3 duration-500">
+                    <div className='flex justify-between'>
+                        <button className='bg-[#BD7D41] text-white rounded-full px-5 py-2 mb-[20px] empty' onClick={empty}  >Clear</button>
+                        <button className='bg-[#BD7D41] text-white rounded-full px-5 py-2 mb-[20px]' onClick={back}>Back</button>
+                    </div>
+                    {cart}
+                </div>
+            </div>
             <div className="max-w-[1320px] px-3 mx-auto py-[60px] lg:py-[120px]">
                 <div className=" flex pb-[70px] justify-between items-center flex-wrap">
                     <div>
@@ -130,11 +190,10 @@ const ShopingShop = () => {
                     </div>
                 </div>
                 <div className="flex flex-row flex-wrap -mx-3">
-                    {cards.slice(0, data).map((p) => <ShopCards key={p.id} animate={p.data} image={p.sofa} item={p.item} star={p.star} lorem={p.text} money={p.money} btn={p.cart} />)}
+                    {cards.slice(0, data).map((p) => <ShopCards key={p.id} animate={p.data} image={p.sofa} item={p.item} star={p.star} lorem={p.text} money={p.money} btn={p.cart} boo={() => p.back(p)} />)}
                 </div>
             </div>
         </div>
     )
 }
-
 export default ShopingShop

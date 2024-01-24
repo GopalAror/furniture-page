@@ -7,7 +7,7 @@ const Nav = () => {
    
     function show() {
         setfirst(!first)
-        document.body.classList.add("max-lg:overflow-hidden")
+        document.body.classList.toggle("max-lg:overflow-hidden")
     }
 
     // function hide() {

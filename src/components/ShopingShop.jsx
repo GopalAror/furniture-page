@@ -17,7 +17,6 @@ const ShopingShop = () => {
         setsave(true)
         setsecond([...second, p])
         document.body.classList.add("overflow-hidden")
-
     }
     function remove(index) {
         const leftcart = [...second];
